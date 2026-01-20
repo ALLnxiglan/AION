@@ -2,12 +2,6 @@
 
 AION is an atomized inference method designed for online scenarios, targeting both CVR (Conversion Rate) and GMV (Gross Merchandise Volume) tasks, with adaptation to the business characteristics of cascaded non-binary feedback. This repository provides the implementation code of AION, where the CVR task is fully implemented, and the GMV task is pending—relevant code will be added in subsequent updates.
 
-## Table of Contents
-
-- [Environment Requirements](https://www.doubao.cn)
-- [Tasks](https://www.doubao.cn)
-- [Acknowledgements](https://www.doubao.cn)
-
 ## Environment Requirements
 
 - Operating System: Linux/macOS/Windows (Linux recommended)
@@ -67,3 +61,4 @@ The GMV task implementation is currently in progress. This section will be updat
 ## Acknowledgements
 
 Part of the code in this project is referenced from the DEFUSE repository:   [ychen216/DEFUSE: code of our WWW 2022 paper Asymptotically Unbiased Estimation for Delayed Feedback Modeling via Label Correction](https://github.com/ychen216/DEFUSE/tree/master)
+
