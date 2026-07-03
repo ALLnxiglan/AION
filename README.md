@@ -1,6 +1,6 @@
 # AION: Atomized Inference for Online GMV with Cascaded Non-binary Feedback
 
-AION is an atomized inference method designed for online scenarios, targeting both CVR (Conversion Rate) and GMV (Gross Merchandise Volume) tasks, with adaptation to the business characteristics of cascaded non-binary feedback. This repository provides the implementation code of AION, where the CVR task is fully implemented, and the GMV task is pending—relevant code will be added in subsequent updates.
+AION is an atomized inference method designed for online scenarios, targeting both CVR (Conversion Rate) and GMV (Gross Merchandise Volume) tasks, with adaptation to the business characteristics of cascaded non-binary feedback. This repository provides the implementation code of AION for both CVR and GMV tasks.
 
 ## Environment Requirements
 
@@ -56,9 +56,34 @@ CUDA_VISIBLE_DEVICES=1 python ./src/main.py \
 
 ### 2. GMV (Gross Merchandise Volume) Task
 
-The GMV task implementation is currently in progress. This section will be updated with detailed running guidelines, code, and dependencies once the development is completed.
+The GMV task implementation is complete, with support for pretraining and streaming inference. Follow the steps below to run the code:
+
+#### 2.1 Pretrain the Model
+
+First, execute the pretraining step to generate baseline model weights:
+
+```bash
+cd GMV
+python method_main.py --model='AION' --mode='pretrain' --gpu_id='0' \
+    --pretrain_remarks='AION' --lr=0.001 --epochs=20
+```
+
+#### 2.2 Run AION in Streaming Setting
+
+Based on the pretrained model, obtain inference results of the AION method under streaming settings:
+
+```bash
+python method_main.py --model='AION' --mode='stream' --gpu_id='0' \
+    --pretrain_remarks='AION' --lr=0.003 \
+    --boost_weight=0.1 --ga_loss_weight=0.5 \
+    --train_start_day=57 --train_end_day=81.875
+```
+
+For more details on the GMV task (model architecture, loss function, metrics, etc.), see [GMV/README.md](GMV/README.md).
 
 ## Acknowledgements
 
-Part of the code in this project is referenced from the DEFUSE repository:   [ychen216/DEFUSE: code of our WWW 2022 paper Asymptotically Unbiased Estimation for Delayed Feedback Modeling via Label Correction](https://github.com/ychen216/DEFUSE/tree/master)
+Part of the code in this project is referenced from the DEFUSE repository: [ychen216/DEFUSE](https://github.com/ychen216/DEFUSE/tree/master)
+
+The GMV task builds upon the OnlineGMV repository: [alimama-tech/OnlineGMV](https://github.com/alimama-tech/OnlineGMV) — which provides the code and benchmark for the WWW 2026 paper *Delayed Feedback Modeling for Post-Click Gross Merchandise Volume Prediction: Benchmark, Insights and Approaches*. We thank the authors for providing the dataset and baseline code.
 
