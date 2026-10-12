@@ -1,6 +1,6 @@
-# AION: Attribution-aware Incremental Online Nudge
+# Beyond Single Delay: Debiased Online GMV Prediction under Cascaded Non-binary Delayed Feedback
 
-A count-price factorization model with sparse Mixture-of-Experts (MoE) for **delayed feedback GMV prediction** in online advertising.
+**AION** (Atomic Inference for Online GMV with cascaded Non-binary feedback) is a count-price factorization model with sparse Mixture-of-Experts (MoE) for **delayed feedback GMV prediction** in online advertising. This directory contains the GMV task implementation.
 
 ## Overview
 

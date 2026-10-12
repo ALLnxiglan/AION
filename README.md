@@ -1,6 +1,6 @@
-# AION: Atomized Inference for Online GMV with Cascaded Non-binary Feedback
+# Beyond Single Delay: Debiased Online GMV Prediction under Cascaded Non-binary Delayed Feedback
 
-AION is an atomized inference method designed for online scenarios, targeting both CVR (Conversion Rate) and GMV (Gross Merchandise Volume) tasks, with adaptation to the business characteristics of cascaded non-binary feedback. This repository provides the implementation code of AION for both CVR and GMV tasks.
+This repository provides the implementation of **AION** (Atomic Inference for Online GMV with cascaded Non-binary feedback) for online GMV (Gross Merchandise Volume) prediction under cascaded non-binary delayed feedback. It also includes an adaptation of AION's delayed-feedback module for CVR (Conversion Rate) prediction.
 
 ## Environment Requirements
 
